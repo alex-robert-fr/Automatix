@@ -14,13 +14,23 @@
 			function runAll() {
 				// cs.evalScript('$.runScript.CreateMarker()', JSON.stringify);
 
-				var csInterface = new CSInterface();
+				
 
-				var json = document.getElementById('includeJSON').value;
+				
 
-				var sender = ('var jsonJSX =' + json + ';');
 
-				csInterface.evalScript(sender+'$.runScript.CreateMarker()');
+				var textArea = document.getElementById('includeJSON');
+
+				const selectFile = document.getElementById('get-file');
+				const reader = new FileReader();
+				reader.onload = function (){
+					var csInterface = new CSInterface();
+					var json = textArea.value = reader.result;
+					var sender = ('var jsonJSX =' + json + ';');
+
+					csInterface.evalScript(sender+'$.runScript.CreateMarker()');
+				}
+				reader.readAsText(selectFile.files[0]);
 			}
 
 			
@@ -42,8 +52,9 @@
 	</head>
 
 	<body>
-		<textarea id="includeJSON" cols="30" rows="10"></textarea>
+		<input type="file" id="get-file" multiple>
+		<textarea id="includeJSON" cols="30" rows="10" placeholder="JSON"></textarea>
 		<p id="docName">&nbsp;</p>
-		<button id="runButton" type="run" onclick="runAll()">Lire Input</button>
+		<button id="runButton" type="run" onclick="runAll()">Insérer Marques</button>
 	</body>
 </html>
