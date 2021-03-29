@@ -15,7 +15,29 @@
 				// cs.evalScript('$.runScript.CreateMarker()', JSON.stringify);
 
 				
+				
+				function TranslateTextInJSON(contentFile){
+					
+					var obj = {
+						chapitres: []
+					};
 
+					function Chapitre(time, description){
+						this.time = time;
+						this.description = description;
+					}
+
+					var lines = contentFile.split('\n');
+					for(var line = 0; line < lines.length; line++){
+						var separateur = lines[line].indexOf('-');
+						var time = lines[line].substring(0, separateur).trim();
+						var description = lines[line].substring(separateur+1, lines[line].length).trim();
+						var chapitre = new Chapitre(time, description);
+						obj.chapitres.push(chapitre);
+					}
+
+					return obj;
+				} 
 				
 
 
@@ -25,7 +47,9 @@
 				const reader = new FileReader();
 				reader.onload = function (){
 					var csInterface = new CSInterface();
-					var json = textArea.value = reader.result;
+					alert(reader.result);
+					var json = textArea.value = JSON.stringify(TranslateTextInJSON(reader.result));
+
 					var sender = ('var jsonJSX =' + json + ';');
 
 					csInterface.evalScript(sender+'$.runScript.CreateMarker()');
