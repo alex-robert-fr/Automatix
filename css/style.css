@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*191919*/
+/*1f1f1f*/
+/*292929*/
+/*404040*/
+
+/*215bff au clique*/
+/*2463ff*/
+
+html,body,h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #262626;
+    color: #f5f5f5;
+    text-align: center;
+}
+header{
+    background-color: #1F1F1F;
+    width: 100%;
+    height: 35px;
+    font-size: 0.7rem;
+}
+header h1{
+    font-family: 'Antonio', sans-serif;
+    position: absolute;
+    left: 25px;
+}
+[for=get-file] aside{
+    position: relative;
+    margin: 20px auto 20px;
+    background: url('../img/folder.png') no-repeat center;
+    background-size: 25%;
+    width: 80vw;
+    height: 60vh;
+    border: #303030 dashed 8px;
+    border-radius:25px;
+}
+aside p{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    color: #808080;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+aside p::after{
+    content: 'Cliquez pour insérer un fichier';
+}
+input,textarea{
+    display: none;
+}
+
+button{
+    background: #2463ff;
+    color: #fff;
+    border: #2463ff solid 2px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    outline: none;
+}
+[type=reset]{
+    margin-left: 25px;
+    border: #ff2424 solid 2px;
+    background: transparent;
+}
+
+button:hover{
+    background-color: #215bff;
+    box-shadow: #1a4ace 0 0 15px;
+}
+[type=reset]:hover{
+    background: #ff2424;
+    box-shadow: #ce1a1a 0 0 10px;
+}
+
+button:active{
+    background-color: #1a4ace;
+}
+[type=reset]:active{
+    background: #ce1a1a;
+    border-color: #ce1a1a;
+}
+
+[type="file"]:valid ~ aside p::after{
+    content: 'Fichier chargé';
+    color: #4465b6;
+}
