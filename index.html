@@ -45,7 +45,6 @@
 				const reader = new FileReader();
 				reader.onload = function (){
 					var csInterface = new CSInterface();
-					alert(reader.result);
 					var json = textArea.value = JSON.stringify(TranslateTextInJSON(reader.result));
 
 					var sender = ('var jsonJSX =' + json + ';');
