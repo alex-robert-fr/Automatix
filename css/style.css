@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/*191919*/
-/*1f1f1f*/
-/*292929*/
-/*404040*/
+/*Gris du plus foncé au plus claire
+#1a1a1a
+#1f1f1f
+#262626
+#333
+#363636
+#4f4f4f
+#666
 
-/*215bff au clique*/
-/*2463ff*/
+Bleu
+#2463ff
+*/
 
 html,body,h1,h2,h3,h4,h5,h6,p{
     margin: 0;
@@ -16,12 +21,12 @@ html,body,h1,h2,h3,h4,h5,h6,p{
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #262626;
+    background-color: #282828;
     color: #f5f5f5;
     text-align: center;
 }
 header{
-    background-color: #1F1F1F;
+    background-color: #1a1a1a;
     width: 100%;
     height: 35px;
     font-size: 0.7rem;
@@ -31,13 +36,26 @@ header h1{
     position: absolute;
     left: 25px;
 }
-[for=get-file] aside{
-    position: relative;
+label{
     margin: 20px auto 20px;
-    background: url('../img/folder.png') no-repeat center;
-    background-size: 25%;
+    display: block;
     width: 80vw;
     height: 60vh;
+    background-color: transparent;
+    border-radius:20px;
+}
+label:hover{
+    background-color: #1f1f1f;
+}
+[for=get-file] aside{
+    box-sizing: border-box;
+    position: relative;
+    top: -8px;
+    left: -8px;
+    background: url('../img/folder.png') no-repeat center;
+    background-size: 25%;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
     border: #303030 dashed 8px;
     border-radius:25px;
     cursor: pointer;
@@ -61,22 +79,25 @@ input,textarea{
 
 button{
     background: #2463ff;
-    color: #fff;
+    color: #eee;
     border: #2463ff solid 2px;
     padding: 10px 20px;
     border-radius: 3px;
     outline: none;
     cursor: pointer;
+    font-weight: 700;
 }
 [type=reset]{
     margin-left: 25px;
     border: #ff2424 solid 2px;
     background: transparent;
+    color: #bbb;
 }
 
 button:hover{
     background-color: #215bff;
     box-shadow: #1a4ace 0 0 15px;
+    color: #eee;
 }
 [type=reset]:hover{
     background: #ff2424;
