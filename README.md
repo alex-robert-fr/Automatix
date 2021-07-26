@@ -1,20 +1,20 @@
 # Automatix
-Automatix est une petite extension visant à automatiser la mise en place des marques sous Première Pro.
+Automatix is a small extension to automate the implementation of brands under Première Pro.
 
 ## Installation
-Rendez vous à l'adresse:
+Go to address:
 ```
 C:\Program Files (x86)\Common Files\Adobe\CEP\extensions
 ```
-Créez un dossier "Automatix" et glissez l'intégralité des fichier à l'intérieurs.
-Puis démarrez Première Pro et allez dans Fenêtre/Extensions/Automatix
+Create an "Automatix" folder and drag all of the files inside.
+Start Première Pro and go to Window / Extensions / Automatix
 
-## Utilisation
-Insérez un fichier .txt sous la forme
+## Use
+Insert a .txt file in the form of
 time - description
-Exemple :
+Example:
 ```
-01:54 - Ma description
-12:08 - Fin de vidéo
+01:54 - My description
+12:08 - End of video
 ```
-Puis cliquez sur "Insérer Marques" 
+And click on "Insert Trademarks"
