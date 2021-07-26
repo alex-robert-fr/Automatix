@@ -71,7 +71,7 @@ aside p{
     font-weight: 700;
 }
 aside p::after{
-    content: 'Cliquez pour insérer un fichier';
+    content: 'Click to insert a file';
 }
 input,textarea{
     display: none;
